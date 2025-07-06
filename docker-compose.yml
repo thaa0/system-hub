@@ -1,0 +1,14 @@
+services:
+  postgres_container:
+    image: postgres:latest  # Usa a imagem oficial mais recente do PostgreSQL
+    environment:
+      POSTGRES_USER: postgres  # Usuário do PostgreSQL
+      POSTGRES_PASSWORD: postgres  # Senha do usuário
+      POSTGRES_DB: divertfestdb  # Nome do banco de dados a ser criado
+    ports:
+      - "5432:5432"  # Porta 5432 do PostgreSQL exposta para o host
+    volumes:
+      - postgres_data_container:/var/lib/postgresql/data  # Volume persistente para os dados
+
+volumes:
+  postgres_data_container:  # Volume Docker persistente para armazenar os dados
