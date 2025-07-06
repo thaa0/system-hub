@@ -30,6 +30,6 @@ public class ClienteApplicationService implements ClienteService {
         Cliente cliente = clienteRepository.buscaClientePorId(id);
         ClienteResponse clienteResponse = new ClienteResponse(cliente);
         log.debug("[finish] ClienteApplicationService - buscaCliente");
-        return null;
+        return clienteResponse;
     }
 }
